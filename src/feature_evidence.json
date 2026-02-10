@@ -1,0 +1,66 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-remove-the-free-case-review-section-from-the-landing-page-so-it-is-no-longer-rendered-and-the-page-no-longer-contains-a-section-with-id-free-case-review",
+      "featureTitle": "Remove the “Free Case Review” section from the landing page so it is no longer rendered and the page no longer contains a section with id=\"free-case-review\".",
+      "files": [
+        "frontend/src/components/landing/LandingPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-15"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-all-navigation-links-and-call-to-action-buttons-that-currently-scroll-to-the-removed-free-case-review-section-so-they-instead-scroll-to-a-remaining-section-use-a-dedicated-contact-target-anchored-near-the-footer-replace-user-facing-cta-text-that-mentions-free-case-review-with-equivalent-consultation-contact-wording-in-english",
+      "featureTitle": "Update all navigation links and call-to-action buttons that currently scroll to the removed \"free-case-review\" section so they instead scroll to a remaining section (use a dedicated \"Contact\" target anchored near the footer). Replace user-facing CTA text that mentions “free case review” with equivalent consultation/contact wording in English.",
+      "files": [
+        "frontend/src/components/landing/ActiveLawsuitsSection.tsx",
+        "frontend/src/components/landing/Footer.tsx",
+        "frontend/src/components/landing/HeroSection.tsx",
+        "frontend/src/components/landing/LandingPage.tsx",
+        "frontend/src/components/landing/TopNav.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-16"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-any-remaining-page-copy-that-references-submitting-or-completing-a-case-review-form-so-it-does-not-imply-the-existence-of-a-form-on-the-site",
+      "featureTitle": "Update any remaining page copy that references submitting or completing a “case review form” so it does not imply the existence of a form on the site.",
+      "files": [
+        "frontend/src/components/landing/ActiveLawsuitsSection.tsx",
+        "frontend/src/components/landing/Footer.tsx",
+        "frontend/src/components/landing/HeroSection.tsx",
+        "frontend/src/components/landing/HowItWorksSection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-17"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

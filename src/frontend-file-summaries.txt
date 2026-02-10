@@ -1,0 +1,18 @@
+{
+  "frontend/src/App.tsx": "Main application component that renders the LandingPage component as the root of the application.",
+  "frontend/src/components/landing/LandingPage.tsx": "One-page layout component that assembles all sections with anchored navigation IDs for smooth scrolling; removed FreeCaseReviewSection and added a Contact anchor near the footer.",
+  "frontend/src/components/landing/TopNav.tsx": "Sticky navigation bar with smooth-scroll anchor links, mobile-responsive menu, and CTA button styled with red accent color; updated to replace \"Free Case Review\" with \"Contact\" link.",
+  "frontend/src/components/landing/HeroSection.tsx": "Hero section featuring Sarah's image, compelling headline, value propositions, and primary CTA button styled with red accent color; updated CTA to scroll to Contact anchor and replaced \"free case review\" copy with consultation wording.",
+  "frontend/src/components/landing/PracticeAreasSection.tsx": "Grid of cards displaying the five practice areas with supportive descriptions, enhanced with scroll reveal animations for smooth entrance effects.",
+  "frontend/src/components/landing/HowItWorksSection.tsx": "Three-step process section explaining the consultation flow with scroll reveal animations; updated Step 1 to remove form-implying language and use \"Contact Us\" instead.",
+  "frontend/src/components/landing/FreeCaseReviewSection.tsx": "Intake form component with validation for collecting case information, integrated with backend mutation, enhanced with scroll reveal animations, and submit button styled with red accent color.",
+  "frontend/src/components/landing/FreeCaseReviewSuccess.tsx": "Success confirmation view displayed after form submission, explaining next steps and showing the submission reference ID.",
+  "frontend/src/components/landing/Footer.tsx": "Comprehensive footer with brand info, navigation links, practice areas, contact details, legal disclaimers, and required attribution; updated Quick Links to replace \"Free Case Review\" with \"Contact\" and adjusted disclaimer to remove form references.",
+  "frontend/src/hooks/useCreateFreeCaseReview.ts": "React Query mutation hook for submitting case review forms to the backend, handling loading/error states and mapping form fields to backend interface.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for fetching case reviews from the backend (getAllReviews and getReview by ID).",
+  "frontend/src/index.css": "Global styles with OKLCH color system updated to USA-inspired palette (deep navy blue #00296b as primary, vibrant red #e5383b as accent) for both light and dark modes, with smooth scrolling and scroll reveal animation utilities.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with custom fonts (Inter), soft shadows, and design tokens matching the warm legal-aid aesthetic.",
+  "frontend/src/hooks/useScrollReveal.ts": "Custom React hook that uses IntersectionObserver to detect when elements enter the viewport and trigger reveal animations, with automatic support for prefers-reduced-motion accessibility preference.",
+  "frontend/src/components/landing/ActiveLawsuitsSection.tsx": "Section component displaying 7 active lawsuits in a responsive grid with cards; updated CTAs to scroll to Contact anchor and replaced button labels with consultation wording.",
+  "frontend/src/components/landing/ctaButtonClasses.ts": "Shared className export for primary CTA buttons that applies red accent background with accent-foreground text and hover state for consistent styling across all landing page CTAs."
+}

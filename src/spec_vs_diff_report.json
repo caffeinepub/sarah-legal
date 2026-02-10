@@ -1,0 +1,44 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-10T12:14:12.527Z",
+  "summary": "Diff updates Hero, Active Lawsuits, TopNav, and LandingPage to remove references/scroll targets to the former Free Case Review section and introduce a new #contact anchor with smooth scrolling. Footer changes are truncated, so removal of the “Free Case Review” quick link and disclaimer copy updates cannot be fully verified from provided evidence. An emoji was added in How It Works.",
+  "missing_requirements": [
+    {
+      "id": "REQ-16",
+      "requirement": "Footer “Quick Links” no longer includes “Free Case Review”.",
+      "reason": "Footer.tsx diff is truncated before the full Quick Links list is shown, so it cannot be confirmed that “Free Case Review” was removed/replaced.",
+      "evidence": [
+        "frontend/src/components/landing/Footer.tsx (truncated)"
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "requirement": "Footer disclaimer text is adjusted so it does not reference “Submitting a case review form” (keep the disclaimer otherwise intact and in English).",
+      "reason": "Footer.tsx diff is truncated and does not include the disclaimer section text, so the required disclaimer update cannot be verified.",
+      "evidence": [
+        "frontend/src/components/landing/Footer.tsx (truncated)"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Added a money emoji (💰) to the How It Works section callout.",
+      "reason": "BuildRequest only asked to remove Free Case Review section and repoint/update CTAs/copy; adding new decorative emoji content is not requested and could be considered an unrelated redesign/content change.",
+      "evidence": [
+        "frontend/src/components/landing/HowItWorksSection.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.62,
+  "changed_files": [
+    "frontend-file-summaries.txt",
+    "frontend/src/components/landing/ActiveLawsuitsSection.tsx",
+    "frontend/src/components/landing/Footer.tsx",
+    "frontend/src/components/landing/HeroSection.tsx",
+    "frontend/src/components/landing/HowItWorksSection.tsx",
+    "frontend/src/components/landing/LandingPage.tsx",
+    "frontend/src/components/landing/TopNav.tsx",
+    "project_state.json"
+  ]
+}

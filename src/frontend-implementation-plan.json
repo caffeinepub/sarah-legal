@@ -1,0 +1,91 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Remove Free Case Review section and repoint all CTAs/links to Contact anchor",
+  "requirements": [
+    {
+      "id": "REQ-15",
+      "summary": "Remove the Free Case Review section from the landing page so it is not rendered and no longer exists in the DOM.",
+      "acceptanceCriteria": [
+        "Landing page no longer renders the FreeCaseReviewSection component.",
+        "There is no DOM element with id=\"free-case-review\" on the page.",
+        "Build succeeds with no unused-import TypeScript errors in LandingPage."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/landing/LandingPage.tsx",
+          "operation": "modify",
+          "description": "Remove the FreeCaseReviewSection import and delete the <section id=\"free-case-review\"> block so it is no longer rendered; ensure no unused imports remain."
+        }
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "summary": "Repoint all CTAs/links that previously scrolled to the removed Free Case Review section so they smoothly scroll to a dedicated Contact anchor near the footer, and update CTA labels accordingly.",
+      "acceptanceCriteria": [
+        "Top navigation no longer includes a link labeled “Free Case Review”.",
+        "Hero primary CTA no longer scrolls to id=\"free-case-review\" and no longer says “Start Your Free Case Review”.",
+        "Each “Active Lawsuits” item no longer scrolls to id=\"free-case-review\" and no longer uses the label “Start your free case review”.",
+        "Footer “Quick Links” no longer includes “Free Case Review”.",
+        "Clicking the updated CTAs performs smooth scrolling to the chosen Contact/footer anchor on both desktop and mobile menus."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/landing/LandingPage.tsx",
+          "operation": "modify",
+          "description": "Introduce a dedicated Contact scroll target anchored near the footer (e.g., add a <section id=\"contact\"> wrapper immediately above the Footer) while keeping the app as a one-page smooth-scroll site."
+        },
+        {
+          "path": "frontend/src/components/landing/TopNav.tsx",
+          "operation": "modify",
+          "description": "Remove the 'Free Case Review' nav link, add/ensure a 'Contact' link that scrolls to the new contact anchor, and repoint the primary 'Get Started' CTA (desktop + mobile) to scroll to the Contact anchor with smooth scrolling."
+        },
+        {
+          "path": "frontend/src/components/landing/HeroSection.tsx",
+          "operation": "modify",
+          "description": "Repoint the hero primary CTA scroll behavior to the Contact anchor and replace user-facing CTA text that mentions “free case review” with consultation/contact wording in English."
+        },
+        {
+          "path": "frontend/src/components/landing/ActiveLawsuitsSection.tsx",
+          "operation": "modify",
+          "description": "Repoint each Active Lawsuits card CTA to scroll to the Contact anchor and update the button label to remove “free case review” wording while preserving smooth scroll behavior."
+        },
+        {
+          "path": "frontend/src/components/landing/Footer.tsx",
+          "operation": "modify",
+          "description": "Update Footer 'Quick Links' to remove 'Free Case Review' and include a 'Contact' quick link that smoothly scrolls to the Contact anchor near the footer."
+        }
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "summary": "Update remaining page copy to remove references to submitting/completing a case review form and keep disclaimers in English without implying a form exists.",
+      "acceptanceCriteria": [
+        "No visible paragraph text encourages the user to “complete this short form” or “submit a case review form”.",
+        "Footer disclaimer text is adjusted so it does not reference “Submitting a case review form” (keep the disclaimer otherwise intact and in English)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/landing/HowItWorksSection.tsx",
+          "operation": "modify",
+          "description": "Revise Step 1 title/description to remove any implication of an on-site form (e.g., remove “Complete our short form” / “case review form” language) while keeping the three-step explanation in English."
+        },
+        {
+          "path": "frontend/src/components/landing/HeroSection.tsx",
+          "operation": "modify",
+          "description": "Update hero paragraph copy to remove “free case review” phrasing and replace with consultation/contact wording in English (no form implications)."
+        },
+        {
+          "path": "frontend/src/components/landing/ActiveLawsuitsSection.tsx",
+          "operation": "modify",
+          "description": "Update the section intro paragraph to remove “start your free case review”/form-implying language and replace with consultation/contact wording in English."
+        },
+        {
+          "path": "frontend/src/components/landing/Footer.tsx",
+          "operation": "modify",
+          "description": "Adjust the legal disclaimer sentence that references “Submitting a case review form” so it does not imply a form exists, keeping the disclaimer otherwise intact and in English."
+        }
+      ]
+    }
+  ]
+}

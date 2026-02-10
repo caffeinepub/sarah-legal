@@ -1,0 +1,86 @@
+{
+  "kind": "build_request",
+  "title": "Remove the Free Case Review section and repoint all CTAs/links",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-15",
+      "text": "Remove the “Free Case Review” section from the landing page so it is no longer rendered and the page no longer contains a section with id=\"free-case-review\".",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "You can remove the free case review section"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Landing page no longer renders the FreeCaseReviewSection component.",
+        "There is no DOM element with id=\"free-case-review\" on the page.",
+        "Build succeeds with no unused-import TypeScript errors in LandingPage."
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "text": "Update all navigation links and call-to-action buttons that currently scroll to the removed \"free-case-review\" section so they instead scroll to a remaining section (use a dedicated \"Contact\" target anchored near the footer). Replace user-facing CTA text that mentions “free case review” with equivalent consultation/contact wording in English.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "You can remove the free case review section"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Top navigation no longer includes a link labeled “Free Case Review”.",
+        "Hero primary CTA no longer scrolls to id=\"free-case-review\" and no longer says “Start Your Free Case Review”.",
+        "Each “Active Lawsuits” item no longer scrolls to id=\"free-case-review\" and no longer uses the label “Start your free case review”.",
+        "Footer “Quick Links” no longer includes “Free Case Review”.",
+        "Clicking the updated CTAs performs smooth scrolling to the chosen Contact/footer anchor on both desktop and mobile menus."
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "text": "Update any remaining page copy that references submitting or completing a “case review form” so it does not imply the existence of a form on the site.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "You can remove the free case review section"
+        ]
+      },
+      "acceptanceCriteria": [
+        "No visible paragraph text encourages the user to “complete this short form” or “submit a case review form”.",
+        "Footer disclaimer text is adjusted so it does not reference “Submitting a case review form” (keep the disclaimer otherwise intact and in English)."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not edit files in frontend/immutablePaths (e.g., frontend/src/hooks/useInternetIdentity.ts(x), frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui).",
+    "Keep the app as a one-page site with smooth scroll behavior for navigation.",
+    "Do not route any images through the backend."
+  ],
+  "nonGoals": [
+    "Removing the Motoko backend canister methods or stored FreeCaseReview data.",
+    "Adding a new backend endpoint or introducing new third-party integrations.",
+    "Redesigning unrelated sections beyond necessary CTA/link/copy updates caused by removing the Free Case Review section."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

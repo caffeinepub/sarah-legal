@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.625rem;
+        
+        /* USA-inspired palette with deep blue primary and vibrant red accent */
+        --background: 0.98 0.005 60;
+        --foreground: 0.20 0.015 60;
+        
+        --card: 1 0 0;
+        --card-foreground: 0.20 0.015 60;
+        
+        --popover: 1 0 0;
+        --popover-foreground: 0.20 0.015 60;
+        
+        /* Deep navy blue primary (#00296b) */
+        --primary: 0.25 0.10 265;
+        --primary-foreground: 0.98 0.005 60;
+        
+        /* Warm beige secondary */
+        --secondary: 0.92 0.02 70;
+        --secondary-foreground: 0.25 0.015 60;
+        
+        /* Soft warm muted tones */
+        --muted: 0.94 0.01 65;
+        --muted-foreground: 0.50 0.02 60;
+        
+        /* Vibrant red accent (#e5383b) */
+        --accent: 0.55 0.20 25;
+        --accent-foreground: 0.98 0.005 60;
+        
+        /* Warm destructive red */
+        --destructive: 0.55 0.22 25;
+        --destructive-foreground: 0.98 0.005 60;
+        
+        /* Subtle borders */
+        --border: 0.88 0.01 65;
+        --input: 0.88 0.01 65;
+        --ring: 0.25 0.10 265;
+        
+        /* Chart colors - USA-inspired tones */
+        --chart-1: 0.25 0.10 265;
+        --chart-2: 0.55 0.20 25;
+        --chart-3: 0.45 0.12 45;
+        --chart-4: 0.55 0.10 180;
+        --chart-5: 0.70 0.18 65;
+    }
+
+    .dark {
+        /* Dark mode with USA-inspired tones */
+        --background: 0.18 0.015 60;
+        --foreground: 0.95 0.005 60;
+        
+        --card: 0.22 0.015 60;
+        --card-foreground: 0.95 0.005 60;
+        
+        --popover: 0.20 0.015 60;
+        --popover-foreground: 0.95 0.005 60;
+        
+        /* Lighter blue for dark mode with good contrast */
+        --primary: 0.50 0.15 265;
+        --primary-foreground: 0.98 0.005 60;
+        
+        --secondary: 0.28 0.02 65;
+        --secondary-foreground: 0.95 0.005 60;
+        
+        --muted: 0.30 0.02 60;
+        --muted-foreground: 0.65 0.02 60;
+        
+        /* Lighter red for dark mode */
+        --accent: 0.60 0.22 25;
+        --accent-foreground: 0.98 0.005 60;
+        
+        --destructive: 0.60 0.20 25;
+        --destructive-foreground: 0.18 0.015 60;
+        
+        --border: 0.30 0.02 60;
+        --input: 0.30 0.02 60;
+        --ring: 0.50 0.15 265;
+        
+        --chart-1: 0.50 0.15 265;
+        --chart-2: 0.60 0.22 25;
+        --chart-3: 0.60 0.15 45;
+        --chart-4: 0.65 0.12 180;
+        --chart-5: 0.75 0.20 65;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-feature-settings: "rlig" 1, "calt" 1;
+    }
+    
+    /* Smooth scrolling for anchor links */
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    /* Focus visible styles for accessibility */
+    *:focus-visible {
+        @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+    }
+}
+
+/* Scroll reveal animations */
+@media (prefers-reduced-motion: no-preference) {
+    .scroll-reveal {
+        opacity: 0;
+        transform: translateY(2rem);
+        transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+
+    .scroll-reveal.revealed {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
